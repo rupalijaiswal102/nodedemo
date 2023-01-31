@@ -24,6 +24,9 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
 let {carsData}=require("./cardata.js")
 let {carMasterData}=require("./cardata.js")
 
+app.get("/carss",function(req,res){
+  res.send(carMasterData)
+})
 app.get("/cars",function(req,res){
   let fuel=req.query.fuel;
   let type=req.query.type;
@@ -67,9 +70,7 @@ app.get("/cars",function(req,res){
     res.send(arr1)
 
 })
-app.get("/carss",function(req,res){
-  res.send(carMasterData)
-})
+
 app.get('/cars/:id', function (w, S) {
   let d = w.params.id 
  let q = carsData.find(e => e.id === d);
