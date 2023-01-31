@@ -68,6 +68,10 @@ app.get("/cars",function(req,res){
 
 })
 
+app.get("/carsMaster",function(req,res){
+  res.send(carMasterData)
+})
+
 
 app.get('/cars/:id', function (w, S) {
   let d = w.params.id 
