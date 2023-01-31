@@ -64,15 +64,12 @@ app.get("/cars",function(req,res){
   arr1.sort((p1,p2)=>(p1.year)-(+p2.year))
   }
  // console.log(carMasterData)
-    res.send(arr1,arr2)
+    res.send(arr1)
 
 })
-
-app.get("/carsMaster",function(req,res){
+app.get("/carss",function(req,res){
   res.send(carMasterData)
 })
-
-
 app.get('/cars/:id', function (w, S) {
   let d = w.params.id 
  let q = carsData.find(e => e.id === d);
